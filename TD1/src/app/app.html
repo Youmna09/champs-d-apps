@@ -1,9 +1,22 @@
 <main class="main">
   <div class="content" role="main">
-    <h1 class="text-dark">Module Champs d'applications</h1>
-    <h2 class="text-success">Séance {{title}}</h2>
-
-    <p class="bg-info">{{resume}}</p>
+    <div class="title">
+      <h1 class="text-dark">Module Champs d'applications</h1>
+      <h2 class="text-success">Séance {{title}}</h2>
+      <p class="bg-info">{{resume}}</p>
+    </div>
+    
+    <div class="card-container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Liste étudiants</h2>
+          <ul>
+            <app-etudiant [estPresent]="false"></app-etudiant>
+          </ul>
+          <button class="btn btn-success" [disabled]="!estAuth()" (click)="rendTousPresents()">Tous présents</button>
+        </div>
+      </div>
+    </div>
   </div>
 </main>
 
