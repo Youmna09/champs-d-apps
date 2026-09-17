@@ -1,0 +1,26 @@
+<main class="main">
+  <div class="content" role="main">
+    <div class="title">
+      <h1 class="text-dark">Module Champs d'applications</h1>
+      <h2 class="text-success">Séance {{title}}</h2>
+      <p class="bg-info">{{resume}}</p>
+    </div>
+    
+    <div class="card-container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Liste étudiants</h2>
+          <ul>
+            <app-etudiant [estPresent]="false" [commentaire]="commentaireSeance"></app-etudiant>
+          </ul>
+          <br>
+          <button class="btn btn-success" [disabled]="!estAuth()" (click)="rendTousPresents()">Tous présents</button>
+          <label for="form-control">Entrez un commentaire</label> 
+          <input id="form-control" type="text" class="form-control" [(ngModel)]="commentaireSeance">
+          <p> Voici votre commentaire : {{commentaireSeance}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
