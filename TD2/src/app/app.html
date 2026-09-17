@@ -11,7 +11,9 @@
         <div class="col-xs-12">
           <h2>Liste étudiants</h2>
           <ul>
-            <app-etudiant [estPresent]="false" [commentaire]="commentaireSeance"></app-etudiant>
+            <app-etudiant *ngFor="let etudiant of tabEtudiants;" [nomEtu]="etudiant.nom" [prenomEtu]="etudiant.prenom" [estPresent]="etudiant.present" [commentaire]="commentaireSeance"></app-etudiant>
+
+
           </ul>
           <br>
           <button class="btn btn-success" [disabled]="!estAuth()" (click)="rendTousPresents()">Tous présents</button>

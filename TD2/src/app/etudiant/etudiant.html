@@ -1,10 +1,22 @@
 <li class="carc card-small">
-    <h4>Nom : {{retNomEtu()}}, Prénom : {{retPrenomEtu()}}, Statut : {{statutEtu()}}, Commentaire : {{commentaire()}}</h4>
+    <h4>
+        Nom : 
+            <span>{{nomEtu()}}</span> , 
+        Prénom : 
+            <span>{{prenomEtu()}}</span>, 
+        Statut : 
+            <span *ngIf="estPresent(); else elseBlock">Présent</span>
+            <ng-template #elseBlock>Absent</ng-template>, 
+        Commentaire : 
+            <span>{{commentaire()}}</span></h4>
+        
+        <div 
+            style="
+                background-color: red;
+                padding: 2%;" 
+                *ngIf="!estPresent()"
+        > 
+        </div>
 </li>
-<li class="carc card-small">
-    <h4>Nom : {{retNomEtu()}}, Prénom : {{retPrenomEtu()}}, Statut : {{statutEtu()}}, Commentaire : {{commentaire()}}</h4>
-</li>
-<li class="carc card-small">
-    <h4>Nom : {{retNomEtu()}}, Prénom : {{retPrenomEtu()}},  Statut : {{statutEtu()}}, Commentaire : {{commentaire()}}</h4>
-</li>
+
 
