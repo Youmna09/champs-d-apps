@@ -1,22 +1,25 @@
-<li class="carc card-small">
-    <h4>
+<li [ngClass]="getColorEtu().class" >
+    <span>
         Nom : 
-            <span>{{nomEtu()}}</span> , 
+            <span  [ngStyle]="{color : getColorEtu().color}">{{nomEtu()}}</span> , 
         Prénom : 
-            <span>{{prenomEtu()}}</span>, 
+            <span [ngStyle]="{color : getColorEtu().color}">{{prenomEtu()}}</span>, 
         Statut : 
-            <span *ngIf="estPresent(); else elseBlock">Présent</span>
+            <span *ngIf="statutEtu; else elseBlock">Présent</span>
             <ng-template #elseBlock>Absent</ng-template>, 
         Commentaire : 
-            <span>{{commentaire()}}</span></h4>
+            <span>{{commentaire()}}</span></span>
         
         <div 
             style="
                 background-color: red;
                 padding: 2%;" 
-                *ngIf="!estPresent()"
+                *ngIf="!statutEtu"
         > 
         </div>
+
+        <button class="btn btn-success" (click)="setPresence()">Présent</button>
+        <button class="btn btn-danger" >Absent</button>
 </li>
 
 

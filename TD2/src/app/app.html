@@ -17,6 +17,7 @@
           </ul>
           <br>
           <button class="btn btn-success" [disabled]="!estAuth()" (click)="rendTousPresents()">Tous présents</button>
+          
           <label for="form-control">Entrez un commentaire</label> 
           <input id="form-control" type="text" class="form-control" [(ngModel)]="commentaireSeance">
           <p> Voici votre commentaire : {{commentaireSeance}}</p>
