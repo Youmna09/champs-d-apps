@@ -20,11 +20,6 @@ export class App {
   public constructor() {
     setTimeout(() => {this.estAuth.update((value) => true)}, 3000);
   }
-  
-  public rendTousPresents() {
-    console.log("Présents");
-  }
-
   public tabEtudiants = [
     {
       nom : "Dupont",
@@ -42,6 +37,16 @@ export class App {
       present : false
     }
   ];
+  
+  public rendTousPresents() {
+    console.log("Présents");
+
+    for (let index = 0; index < this.tabEtudiants.length; index++) {
+      this.tabEtudiants[index].present = true;
+      
+    }
+  }
+
 }
 
 bootstrapApplication(App);

@@ -5,7 +5,7 @@
         Prénom : 
             <span [ngStyle]="{color : getColorEtu().color}">{{prenomEtu()}}</span>, 
         Statut : 
-            <span *ngIf="statutEtu; else elseBlock">Présent</span>
+            <span *ngIf="estPresent(); else elseBlock">Présent</span>
             <ng-template #elseBlock>Absent</ng-template>, 
         Commentaire : 
             <span>{{commentaire()}}</span></span>
@@ -13,13 +13,14 @@
         <div 
             style="
                 background-color: red;
-                padding: 2%;" 
-                *ngIf="!statutEtu"
+                width: 30px;
+                height: 30px;" 
+            *ngIf="!estPresent()"
         > 
         </div>
 
-        <button class="btn btn-success" (click)="setPresence()">Présent</button>
-        <button class="btn btn-danger" >Absent</button>
+        <button class="btn btn-success" (click)="setPresence()" [disabled]="estPresent()">Présent</button>
+        <button class="btn btn-danger" (click)="setAbscence()" [disabled]="!estPresent()">Absent</button>
 </li>
 
 

@@ -1,4 +1,4 @@
-import { Component, computed, input, signal } from '@angular/core';
+import { Component, computed, input, model, signal } from '@angular/core';
 import { NgIf, NgFor, NgStyle, NgClass } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
@@ -14,12 +14,12 @@ export class Etudiant {
   
   nomEtu = input<string>();
   prenomEtu = input<string>();
-  estPresent = input<boolean>();
+  estPresent = model<boolean>();
   commentaire = input<string>();
-  
-  protected statutEtu = this.estPresent();
+
+
   getColorEtu() {
-    if (this.statutEtu) {
+    if (this.estPresent()) {
       return {
         class : "list-group-item-success",
         color : "blue"
@@ -33,6 +33,12 @@ export class Etudiant {
   }
 
   setPresence() {
-    this.statutEtu = true;
+    this.estPresent.update(() => true);
+
+  }
+
+  setAbscence() {
+    this.estPresent.update(() => false);
+
   }
 }
