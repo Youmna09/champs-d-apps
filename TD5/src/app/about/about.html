@@ -1,0 +1,9 @@
+<p>about works!</p>
+
+<ol>
+    @for (objectif of serviceActivite.objectifs; track $index) {
+        <li class="life-container" animate.enter="animation-ajout">
+            {{objectif}}
+        </li> 
+    }
+</ol>

@@ -1,0 +1,22 @@
+<p>consult-activity works!</p>
+
+<h1>Test de récupération des paramètres :</h1>
+<ol>
+    @if (routeurActive.snapshot.params["id"]){
+        <li>
+            Nom de l'activité : {{serviceActivite.objectifs[id]}}
+        </li>
+        <input type="button" class="btn" (click)="supprimeElem()" value="Supprimer">
+        
+        @if (modifMode){
+            <input type="text" [(ngModel)]="modif">
+            <input type="button" class="btn" (click)="modifElem()" value="Enregistrer">
+        }
+        @else{
+            <input type="button" class="btn" (click)="setModifMode()" value="Modifier">
+        }
+
+        <input type="button" class="btn" value="Retour" (click)="routeur.navigate([''])">
+    }
+    
+</ol>
