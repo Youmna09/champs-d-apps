@@ -8,7 +8,16 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './home.html',
 })
 export class Home {
-  protected nbItems = Number(4);
+  protected nbItems = Number(0);
   protected btnText = "Ajouter un élément";
-  protected objectifText = "Mon nouvel objectif";
+  protected objectifText = String();
+  protected objectifs = Array();
+
+  /**
+   * ajoutItem
+   */
+  public ajoutItem() {
+    this.nbItems++;
+    this.objectifs.push(this.objectifText);
+  }
 }

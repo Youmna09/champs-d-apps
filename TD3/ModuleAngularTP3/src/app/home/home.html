@@ -11,14 +11,17 @@
     <div class="col">
        <p class="sm">Un nouvel élément de liste</p> 
        <form>
-            <input type="text" [(ngModel)]="objectifText" [value]="objectifText" class="txt">
-            <input type="button" [value]="btnText" class="btn">
+            <input name="input" type="text" [(ngModel)]="objectifText" [value]="objectifText" class="txt">
+            <input type="button" [value]="btnText" class="btn" (click)="ajoutItem()">
         </form>
         <p>Voici ce que vous écrivez : {{objectifText}}</p>
     </div>
-
     
     <div class="col">
-       <p class="life-container">Un bloc</p> 
+        @for (objectif of objectifs; track $index) {
+            <p class="life-container">
+                {{objectif}}
+            </p> 
+        }  
     </div>
 </div>
