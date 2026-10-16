@@ -3,18 +3,20 @@
   <div class="components-link">
     <ul>
       <li>
-        <a href="">Accueil</a>
+        <a routerLink="">Accueil</a>
       </li>
       <li>
-        <a href="">About</a>
+        <a routerLink="/about">About</a>
+      </li>
+      <li>
+        <a href="/about">About2</a>
       </li>
     </ul>
   </div>
   <div class="components">
-    <app-home></app-home>
+    <router-outlet />
     <app-about></app-about>
   </div>
    
   
 </main>
-<router-outlet />
