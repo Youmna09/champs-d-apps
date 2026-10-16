@@ -1,0 +1,15 @@
+<p>consult-activity works!</p>
+
+<h1>Test de récupération des paramètres :</h1>
+<ol>
+    @if (routeur.snapshot.params["id"]){
+        <li>
+            Paramètre 1 transmis : {{routeur.snapshot.params["id"]}}
+        </li>
+    }
+    @if (routeur.snapshot.params["name"]){
+        <li>
+            Paramètre 2 transmis : {{routeur.snapshot.params["name"]}}
+        </li>
+    }
+</ol>
